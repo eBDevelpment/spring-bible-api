@@ -8,6 +8,8 @@
 		<version>3.3.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	<autor-name>Edivan B. Fontes</autor-name>
+	<data-criation>16/06/2023</data-criation>
 	<groupId>com.edivan.fontes</groupId>
 	<artifactId>spring-bible-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
