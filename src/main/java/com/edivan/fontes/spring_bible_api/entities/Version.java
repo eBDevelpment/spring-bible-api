@@ -19,8 +19,9 @@ public class Version implements Serializable {
 	private Long id;
 	private String name;
 	private String abbreviation;
-	private Integer year;
+	private Integer publication;
 	private String publisher;
+	
 	@Column(name = "number_of_verses")
 	private Integer numberOfVerses;
 	
@@ -33,7 +34,7 @@ public class Version implements Serializable {
 		this.id = id;
 		this.name = name;
 		this.abbreviation = abbreviation;
-		this.year = year;
+		this.publication = year;
 		this.publisher = publisher;
 		this.numberOfVerses = numberOfVerse;
 	}
@@ -63,11 +64,11 @@ public class Version implements Serializable {
 	}
 
 	public Integer getYear() {
-		return year;
+		return publication;
 	}
 
 	public void setYear(Integer year) {
-		this.year = year;
+		this.publication = year;
 	}
 
 	public String getPublisher() {
@@ -113,7 +114,7 @@ public class Version implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Version [id=" + id + ", name=" + name + ", abbreviation=" + abbreviation + ", year=" + year
+		return "Version [id=" + id + ", name=" + name + ", abbreviation=" + abbreviation + ", year=" + publication
 				+ ", publisher=" + publisher + ", numberOfVerse=" + numberOfVerses + "]";
 	}
 	
