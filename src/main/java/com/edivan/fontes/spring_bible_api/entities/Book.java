@@ -2,6 +2,7 @@ package com.edivan.fontes.spring_bible_api.entities;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +17,10 @@ public class Book implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Column(name = "testament_id")
+	private Long testamentId;
+
 	private String name;
 	private String abbreviation;
 	private Integer caps;
@@ -24,13 +29,15 @@ public class Book implements Serializable {
 	
 	}
 
-	public Book(Long id, String name, String abbreviation, Integer caps) {
+	public Book(Long id, Long testamentId, String name, String abbreviation, Integer caps) {
 		super();
 		this.id = id;
+		this.testamentId = testamentId;
 		this.name = name;
 		this.abbreviation = abbreviation;
 		this.caps = caps;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -38,6 +45,14 @@ public class Book implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public Long getTestamentId() {
+		return testamentId;
+	}
+
+	public void setTestamentId(Long testamentId) {
+		this.testamentId = testamentId;
 	}
 
 	public String getName() {
@@ -91,7 +106,8 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", name=" + name + ", abbreviation=" + abbreviation + ", caps=" + caps + "]";
+		return "Book [id=" + id + ", testamentId=" + testamentId + ", name=" + name + ", abbreviation=" + abbreviation
+				+ ", caps=" + caps + "]";
 	}
-	
+
 }

@@ -28,7 +28,8 @@ public class Verse implements Serializable {
 	private Long bookId;
 	
 	private Integer chapter;
-	private Integer verse;
+	private Integer verse;	
+	@Column(name = "text", length = 1024)
 	private String text;
 	
 	public Verse() {
